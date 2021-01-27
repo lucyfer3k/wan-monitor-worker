@@ -9,4 +9,4 @@ curl -H "Content-Type: application/json" \
     -XPOST "http://elasticsearch:9200/speedtest-$DATEFMT/doc" \
     -d "$SPEEDTEST_JSON" >> /dev/null
 
-echo "$DATEPRT: speedtest is a success"
+echo "$DATEPRT: speedtest was successful"

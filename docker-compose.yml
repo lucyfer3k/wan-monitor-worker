@@ -36,9 +36,11 @@ services:
       - dataIN:/usr/share/influxdb/data
 
   ubuntu:
-    image: mw/speedtest
-    container_name: speedtest-worker
-    command: sh -c "service cron start && tail -f /var/log/cron.log"
+    image: worker-wanmon
+    container_name: worker
+    environment:
+      - "INFLUXDB_TOKEN=XXX"
+    #command: sh -c "service cron start && tail -f /var/log/cron.log"
 
 volumes:
   dataES:

@@ -1,0 +1,2 @@
+0 * * * *   /opt/speedmon.sh >> /var/log/cron.log
+* * * * * . /root/influx_token.sh;  /opt/pingmon.sh >> /var/log/cron.log

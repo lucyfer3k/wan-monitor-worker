@@ -1,28 +1,9 @@
 services:
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
-    environment:
-      - "discovery.type=single-node"
-      - bootstrap.memory_lock=true
-      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-    expose:
-      - "9200"
-    restart: unless-stopped
-    volumes:
-      - dataES:/usr/share/elasticsearch/data
-  
   grafana:
     image: grafana-wanmon
     ports:
       - 3000:3000
     restart: unless-stopped
-    volumes:
-      - dataGR:/usr/share/grafana/data
-
 
   influxdb:
     image: influxdb-wanmon
@@ -30,7 +11,8 @@ services:
       - "8086"
     restart: unless-stopped
     volumes:
-      - dataIN:/usr/share/influxdb/data
+      - influxdb:/var/lib/influxdb2
+    command: influxd run --bolt-path /var/lib/influxdb2/influxd.bolt --engine-path /var/lib/influxdb2/engine --store bolt
 
   ubuntu:
     build:
@@ -40,10 +22,6 @@ services:
       - ./worker-wanmon/worker.env
 
 volumes:
-  dataES:
-    driver: local
-  dataGR:
-    driver: local
-  dataIN:
+  influxdb:
     driver: local
 

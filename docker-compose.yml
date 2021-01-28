@@ -38,7 +38,6 @@ services:
     container_name: worker
     env_file:
       - ./worker-wanmon/worker.env
-    #command: sh -c "service cron start && tail -f /var/log/cron.log"
 
 volumes:
   dataES:

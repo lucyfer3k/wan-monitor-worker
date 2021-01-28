@@ -1,7 +1,6 @@
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.10.2
-    container_name: elasticsearch
     environment:
       - "discovery.type=single-node"
       - bootstrap.memory_lock=true
@@ -18,7 +17,6 @@ services:
   
   grafana:
     image: grafana-wanmon
-    container_name: grafana
     ports:
       - 3000:3000
     restart: unless-stopped
@@ -28,7 +26,6 @@ services:
 
   influxdb:
     image: influxdb-wanmon
-    container_name: influxdb
     expose:
       - "8086"
     restart: unless-stopped
@@ -36,10 +33,11 @@ services:
       - dataIN:/usr/share/influxdb/data
 
   ubuntu:
-    image: worker-wanmon
+    build:
+      context: ./worker-wanmon       
     container_name: worker
-    environment:
-      - "INFLUXDB_TOKEN=XXX"
+    env_file:
+      - ./worker-wanmon/worker.env
     #command: sh -c "service cron start && tail -f /var/log/cron.log"
 
 volumes:

@@ -13,3 +13,6 @@ Uses configured containers of images:
 - Eliminate elasticsearch from the process and use only InfluxDB
 - Persist InfluxDB data
 
+This project was first based on these blog posts:
+- https://nbailey.ca/post/wan-speedtest-elasticsearch/
+- https://nbailey.ca/post/wan-ping-monitor-influxdb/

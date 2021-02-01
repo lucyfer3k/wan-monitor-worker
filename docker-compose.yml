@@ -1,27 +1,35 @@
 services:
   grafana:
-    image: grafana-wanmon
+    image: grafana/grafana:7.3.7
     ports:
       - 3000:3000
+    env_file:
+      - ./grafana/.env
     restart: unless-stopped
 
   influxdb:
-    image: influxdb-wanmon
+    build:
+      context: ./influxdb
     expose:
       - "8086"
-    restart: unless-stopped
-    volumes:
-      - influxdb:/var/lib/influxdb2
-    command: influxd run --bolt-path /var/lib/influxdb2/influxd.bolt --engine-path /var/lib/influxdb2/engine --store bolt
-
-  ubuntu:
-    build:
-      context: ./worker-wanmon       
-    container_name: worker
     env_file:
-      - ./worker-wanmon/worker.env
+      - ./influxdb/.env
+    restart: unless-stopped
+  
+  pingmon:
+    build:
+      context: ./worker-ping
+    container_name: worker-ping
+    env_file:
+      - ./worker-ping/.env
+    restart: unless-stopped
+    
 
-volumes:
-  influxdb:
-    driver: local
+  speedmon:
+    build:
+      context: ./worker-speed
+    container_name: worker-speed
+    env_file:
+      - ./worker-speed/.env
+    restart: unless-stopped
 

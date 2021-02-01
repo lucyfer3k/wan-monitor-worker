@@ -1,0 +1,6 @@
+from(bucket: "netstats")
+  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+  |> filter(fn: (r) => r["_measurement"] == "ping")
+  |> filter(fn: (r) => r["_field"] == "rtt")
+  |> aggregateWindow(every: v.windowPeriod, fn: mean, createEmpty: false)
+  |> yield(name: "mean")

@@ -8,16 +8,17 @@ How to get started:
 4. docker-compose up
 5. After Grafana is up and running run ./grafana/add-datasource.sh script
 6. Go to http://localhost:3000 and login to Grafana using your username & password (default admin:password123)
+7. Add dashboard basing on flux queries from grafana.d of this project
 
 
-Uses configured containers of images:
+Based on images:
 - ubuntu:latest
 - grafana/grafana:latest
 - quay.io/influxdb/influxdb:2.0.3
 
 #TODO:
 - Add nginx and serve Grafana through it
-- Set data source + dashboard automatically in Grafana
+- Set dashboard automatically in Grafana
 
 This project was first based on these blog posts:
 - https://nbailey.ca/post/wan-speedtest-elasticsearch/

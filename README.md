@@ -6,6 +6,8 @@ How to get started:
 2. Run setup-env.sh
 3. mkdir /var/lib/grafana /var/lib/influxdbv2
 4. docker-compose up
+5. After Grafana is up and running run ./grafana/add-datasource.sh script
+6. Go to http://localhost:3000 and login to Grafana using your username & password (default admin:password123)
 
 
 Uses configured containers of images:

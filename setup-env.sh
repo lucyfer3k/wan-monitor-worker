@@ -11,15 +11,15 @@ if [ -e ./config.ini ]; then
   
   # Prepare InfluxDB and Worker .env files
 
-  echo "INFLUXDB_TOKEN=$in_token" | tee ./influxdb/.env ./worker/.env
-  echo "INFLUXDB_ORG=$in_org" | tee -a ./worker/.env ./influxdb/.env
-  echo "INFLUXDB_BUCKET=$in_bucket" | tee -a ./worker/.env  ./influxdb/.env
+  echo "INFLUXDB_TOKEN=$in_token" | tee ./influxdb/.env ./worker/.env ./grafana/.env
+  echo "INFLUXDB_ORG=$in_org" | tee -a ./worker/.env ./influxdb/.env ./grafana/.env
+  echo "INFLUXDB_BUCKET=$in_bucket" | tee -a ./worker/.env  ./influxdb/.env ./grafana/.env
   echo "INFLUXDB_USERNAME=$in_username" | tee -a ./influxdb/.env
   echo "INFLUXDB_PASSWORD=$in_password" | tee -a ./influxdb/.env
 
   # Grafana
 
-  echo "GF_SECURITY_ADMIN_USER=$gr_username" | tee ./grafana/.env
+  echo "GF_SECURITY_ADMIN_USER=$gr_username" | tee -a ./grafana/.env
   echo "GF_SECURITY_ADMIN_PASSWORD=$gr_password" | tee -a ./grafana/.env
 
 else

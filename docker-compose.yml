@@ -5,6 +5,8 @@ services:
       - 3000:3000
     env_file:
       - ./grafana/.env
+    volumes:
+      - grafana-storage:/var/lib/grafana
     restart: unless-stopped
 
   influxdb:
@@ -14,22 +16,29 @@ services:
       - "8086"
     env_file:
       - ./influxdb/.env
+    volumes:
+      - influxdb-storage:/var/lib/influxdbv2/
     restart: unless-stopped
   
   pingmon:
     build:
-      context: ./worker-ping
-    container_name: worker-ping
+      context: ./worker
     env_file:
-      - ./worker-ping/.env
+      - ./worker/.env
+    command: /opt/pingmon.sh
     restart: unless-stopped
     
 
   speedmon:
     build:
-      context: ./worker-speed
-    container_name: worker-speed
+      context: ./worker
     env_file:
-      - ./worker-speed/.env
+      - ./worker/.env
+    command: /opt/speedmon.sh
     restart: unless-stopped
 
+volumes:
+  grafana-storage:
+    driver: local
+  influxdb-storage:
+    driver: local

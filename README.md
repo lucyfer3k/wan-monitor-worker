@@ -1,6 +1,13 @@
 # wan-monitor
 Dockerized WAN monitoring service isolated from private network.
 
+How to get started:
+1. Configurate your environment within config.ini
+2. Run setup-env.sh
+3. mkdir /var/lib/grafana /var/lib/influxdbv2
+4. docker-compose up
+
+
 Uses configured containers of images:
 - ubuntu:latest
 - grafana/grafana:latest
@@ -8,8 +15,7 @@ Uses configured containers of images:
 
 #TODO:
 - Add nginx and serve Grafana through it
-- Create Dockerfile for Grafana
-- Persist data in Grafana
+- Set data source + dashboard automatically in Grafana
 
 This project was first based on these blog posts:
 - https://nbailey.ca/post/wan-speedtest-elasticsearch/

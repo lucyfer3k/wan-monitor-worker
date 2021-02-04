@@ -4,11 +4,10 @@ Dockerized WAN monitoring service isolated from private network.
 How to get started:
 1. Configurate your environment within config.ini
 2. Run setup-env.sh
-3. mkdir /var/lib/grafana /var/lib/influxdbv2
-4. docker-compose up
-5. After Grafana is up and running run ./grafana/add-datasource.sh script
-6. Go to http://localhost:3000 and login to Grafana using your username & password (default admin:password123)
-7. Add dashboard basing on flux queries from grafana.d of this project
+3. docker-compose up
+4. After Grafana is up and running run ./grafana/add-datasource.sh script
+5. Go to http://localhost:3000 and login to Grafana using your username & password (default admin:password123)
+6. Add dashboard basing on flux queries from grafana.d of this project
 
 
 Based on images:
@@ -18,7 +17,7 @@ Based on images:
 
 #TODO:
 - Add nginx and serve Grafana through it
-- Set dashboard automatically in Grafana
+- Set dashboard and datasource automatically in Grafana
 
 This project was first based on these blog posts:
 - https://nbailey.ca/post/wan-speedtest-elasticsearch/

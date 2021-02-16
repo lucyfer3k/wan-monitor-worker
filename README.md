@@ -10,7 +10,7 @@ Dockerized WAN monitoring service isolated from private network.
 4. After Grafana is up and running add datasource through `./grafana/add-datasource.sh`
 5. Add dashboard script `./grafana/add-dashboard.sh`
 6. Go to http://localhost:8080 and login to Grafana using your username & password (default admin:password123)
-7. Go to Dashboards -> Manage
+7. Go to Dashboards -> Manage<br/>
 ![](https://i.imgur.com/uRt18fP.png)
 8. Choose WAN Monitoring
 

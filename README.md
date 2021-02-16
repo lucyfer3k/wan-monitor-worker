@@ -13,6 +13,15 @@ Dockerized WAN monitoring service isolated from private network (except Grafana)
 ![](https://i.imgur.com/uRt18fP.png)
 7. Choose WAN Monitoring
 
+### Quick start:
+```
+./setup-env.sh
+sudo docker-compose up -d
+sleep 30
+./setup-grafana.sh
+```
+
+
 #### Example of gathered data:
 
 ![](https://i.imgur.com/fUrOOhe.png)
@@ -34,5 +43,4 @@ Dockerized WAN monitoring service isolated from private network (except Grafana)
 - https://nbailey.ca/post/wan-ping-monitor-influxdb/
 
 #### TODO
-1. Persist InfluxDB data and check if first config exists (at the moment data is lost on influxdb restart)
-2. Create 1 script that runs all other stuff
+- Persist InfluxDB data and check if first config exists (at the moment data is lost on influxdb restart)

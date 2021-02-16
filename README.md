@@ -1,7 +1,7 @@
 # wan-monitor
-Dockerized WAN monitoring service isolated from private network.
+Dockerized WAN monitoring service isolated from private network (except Grafana).
 
-![](https://i.imgur.com/fUrOOhe.png)
+![](https://i.imgur.com/zJNA6Xm.png)
 
 ### How to get started:
 1. Configurate your environment within `config.ini`
@@ -13,6 +13,9 @@ Dockerized WAN monitoring service isolated from private network.
 7. Go to Dashboards -> Manage<br/>
 ![](https://i.imgur.com/uRt18fP.png)
 8. Choose WAN Monitoring
+<br/>
+####Example of gathered data:
+![](https://i.imgur.com/fUrOOhe.png)
 
 #### Tested on:
 - Docker version 20.10.3

@@ -4,10 +4,10 @@
 set -m
 
 # Start influxdb first setup and wait for it to go up
-if [ ! -f /root/.influxdbv2/config ]; then
+if [ ! -f /var/lib/influxdb2/influxd.bolt ]; then
   echo "Running influxdb first setup"
   
-  influxd  &
+  influxd run --bolt-path /var/lib/influxdb2/influxd.bolt --engine-path /var/lib/influxdb2/engine --store bolt &
   sleep 10
 
   # Run influxdb first setup
@@ -25,5 +25,5 @@ if [ ! -f /root/.influxdbv2/config ]; then
   fg
 
 else
-  influxd run
+  influxd run --bolt-path /var/lib/influxdb2/influxd.bolt --engine-path /var/lib/influxdb2/engine --store bolt
 fi

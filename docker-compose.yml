@@ -24,6 +24,8 @@ services:
       - "8086"
     env_file:
       - ./.env
+    volumes:
+      - influxdb-storage:/var/lib/influxdb2
     restart: unless-stopped
   
   pingmon:
@@ -45,4 +47,6 @@ services:
 
 volumes:
   grafana-storage:
+    driver: local
+  influxdb-storage:
     driver: local

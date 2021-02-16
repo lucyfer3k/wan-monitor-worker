@@ -42,5 +42,3 @@ sleep 30
 - https://nbailey.ca/post/wan-speedtest-elasticsearch/
 - https://nbailey.ca/post/wan-ping-monitor-influxdb/
 
-#### TODO
-- Persist InfluxDB data and check if first config exists (at the moment data is lost on influxdb restart)

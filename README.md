@@ -1,7 +1,7 @@
 # wan-monitor
 Dockerized WAN monitoring service isolated from private network.
 
-![](https://imgur.com/S5iblCo)
+![](https://i.imgur.com/fUrOOhe.png)
 
 ### How to get started:
 1. Configurate your environment within `config.ini`
@@ -11,7 +11,7 @@ Dockerized WAN monitoring service isolated from private network.
 5. Add dashboard script `./grafana/add-dashboard.sh`
 6. Go to http://localhost:8080 and login to Grafana using your username & password (default admin:password123)
 7. Go to Dashboards -> Manage
-![](https://imgur.com/uRt18fP)
+![](https://i.imgur.com/uRt18fP.png)
 8. Choose WAN Monitoring
 
 #### Tested on:

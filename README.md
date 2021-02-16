@@ -5,9 +5,11 @@ How to get started:
 1. Configurate your environment within config.ini
 2. Run setup-env.sh
 3. docker-compose up
-4. After Grafana is up and running run ./grafana/add-datasource.sh script
+4. After Grafana is up and running: 
+  a) Add datasource script ./grafana/add-datasource.sh
+  b) Add dashboard script ./grafana/add-dashboard.sh
 5. Go to http://localhost:3000 and login to Grafana using your username & password (default admin:password123)
-6. Add dashboard basing on flux queries from grafana.d of this project
+6. Go to Dashboards -> Manage -> WAN Monitoring 
 
 
 Based on images:
@@ -17,7 +19,6 @@ Based on images:
 
 #TODO:
 - Add nginx and serve Grafana through it
-- Set dashboard and datasource automatically in Grafana
 
 This project was first based on these blog posts:
 - https://nbailey.ca/post/wan-speedtest-elasticsearch/

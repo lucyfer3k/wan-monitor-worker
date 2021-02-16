@@ -1,12 +1,20 @@
 services:
   grafana:
     image: grafana/grafana:7.3.7
-    ports:
-      - 3000:3000
+    expose:
+      - "3000"
     env_file:
       - ./grafana/.env
     volumes:
       - grafana-storage:/var/lib/grafana
+    restart: unless-stopped
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - 8080:80
+    volumes:
+     - ./nginx:/etc/nginx/templates
     restart: unless-stopped
 
   influxdb:

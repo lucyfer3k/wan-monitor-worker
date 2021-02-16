@@ -498,7 +498,7 @@ EOF
 
 
 
-curl --request POST "http://$GF_SECURITY_ADMIN_USER:$GF_SECURITY_ADMIN_PASSWORD@localhost:3000/api/dashboards/db" \
+curl --request POST "http://$GF_SECURITY_ADMIN_USER:$GF_SECURITY_ADMIN_PASSWORD@localhost:8080/api/dashboards/db" \
  --header "Accept: application/json" \
  --header "Content-Type: application/json" \
  --data "$(generate_post_data)"

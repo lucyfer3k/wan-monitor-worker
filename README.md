@@ -14,7 +14,7 @@ Dockerized WAN monitoring service isolated from private network (except Grafana)
 ![](https://i.imgur.com/uRt18fP.png)
 8. Choose WAN Monitoring
 
-####Example of gathered data:
+#### Example of gathered data:
 
 ![](https://i.imgur.com/fUrOOhe.png)
 

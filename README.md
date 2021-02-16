@@ -13,8 +13,9 @@ Dockerized WAN monitoring service isolated from private network (except Grafana)
 7. Go to Dashboards -> Manage<br/>
 ![](https://i.imgur.com/uRt18fP.png)
 8. Choose WAN Monitoring
-<br/>
+
 ####Example of gathered data:
+
 ![](https://i.imgur.com/fUrOOhe.png)
 
 #### Tested on:

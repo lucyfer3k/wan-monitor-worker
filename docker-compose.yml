@@ -4,7 +4,7 @@ services:
     expose:
       - "3000"
     env_file:
-      - ./grafana/.env
+      - ./.env
     volumes:
       - grafana-storage:/var/lib/grafana
     restart: unless-stopped
@@ -23,14 +23,14 @@ services:
     expose:
       - "8086"
     env_file:
-      - ./influxdb/.env
+      - ./.env
     restart: unless-stopped
   
   pingmon:
     build:
       context: ./worker
     env_file:
-      - ./worker/.env
+      - ./.env
     command: /opt/pingmon.sh
     restart: unless-stopped
     
@@ -39,7 +39,7 @@ services:
     build:
       context: ./worker
     env_file:
-      - ./worker/.env
+      - ./.env
     command: /opt/speedmon.sh
     restart: unless-stopped
 

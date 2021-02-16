@@ -6,13 +6,12 @@ Dockerized WAN monitoring service isolated from private network (except Grafana)
 ### How to get started:
 1. Configurate your environment within `config.ini`
 2. Setup environmental variables `./setup-env.sh`
-3. Start your containers `docker-compose up`
-4. After Grafana is up and running add datasource through `./grafana/add-datasource.sh`
-5. Add dashboard script `./grafana/add-dashboard.sh`
-6. Go to http://localhost:8080 and login to Grafana using your username & password (default admin:password123)
-7. Go to Dashboards -> Manage<br/>
+3. Start your containers `sudo docker-compose up -d`
+4. After Grafana is up run `./setup-grafana.sh`
+5. Go to http://localhost:8080 and login to Grafana using your username & password (default admin:password123)
+6. Go to Dashboards -> Manage<br/>
 ![](https://i.imgur.com/uRt18fP.png)
-8. Choose WAN Monitoring
+7. Choose WAN Monitoring
 
 #### Example of gathered data:
 
@@ -33,3 +32,7 @@ Dockerized WAN monitoring service isolated from private network (except Grafana)
 #### This project was first based on these blog posts:
 - https://nbailey.ca/post/wan-speedtest-elasticsearch/
 - https://nbailey.ca/post/wan-ping-monitor-influxdb/
+
+#### TODO
+1. Persist InfluxDB data and check if first config exists (at the moment data is lost on influxdb restart)
+2. Create 1 script that runs all other stuff

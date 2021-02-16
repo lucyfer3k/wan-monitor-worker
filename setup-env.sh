@@ -9,18 +9,18 @@ if [ -e ./config.ini ]; then
   
   . ./config.ini
   
-  # Prepare InfluxDB and Worker .env files
+  # InfluxDB + Worker
 
-  echo "INFLUXDB_TOKEN=$in_token" | tee ./influxdb/.env ./worker/.env ./grafana/.env
-  echo "INFLUXDB_ORG=$in_org" | tee -a ./worker/.env ./influxdb/.env ./grafana/.env
-  echo "INFLUXDB_BUCKET=$in_bucket" | tee -a ./worker/.env  ./influxdb/.env ./grafana/.env
-  echo "INFLUXDB_USERNAME=$in_username" | tee -a ./influxdb/.env
-  echo "INFLUXDB_PASSWORD=$in_password" | tee -a ./influxdb/.env
+  echo "INFLUXDB_TOKEN=$in_token" | tee ./.env
+  echo "INFLUXDB_ORG=$in_org" | tee -a ./.env
+  echo "INFLUXDB_BUCKET=$in_bucket" | tee -a ./.env
+  echo "INFLUXDB_USERNAME=$in_username" | tee -a ./.env
+  echo "INFLUXDB_PASSWORD=$in_password" | tee -a ./.env
 
   # Grafana
 
-  echo "GF_SECURITY_ADMIN_USER=$gr_username" | tee -a ./grafana/.env
-  echo "GF_SECURITY_ADMIN_PASSWORD=$gr_password" | tee -a ./grafana/.env
+  echo "GF_SECURITY_ADMIN_USER=$gr_username" | tee -a ./.env
+  echo "GF_SECURITY_ADMIN_PASSWORD=$gr_password" | tee -a ./.env
 
 else
   echo "Config file does not exist"

@@ -1,5 +1,9 @@
 # wan-monitor-worker
-Dockerized WAN monitoring service isolated from private network (except nginx serving as reverse proxy for Grafana).
+Dockerized WAN monitoring service maximally isolated from private network.
+
+![Alternative build with worker processes on directly on host machine](https://github.com/lucyfer3k/wan-monitor-host)
+
+### Solution architecture diagram
 
 ![](https://i.imgur.com/zJNA6Xm.png)
 

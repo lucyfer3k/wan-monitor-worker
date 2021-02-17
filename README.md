@@ -36,7 +36,7 @@ sleep 30
 - ubuntu:latest
 - grafana/grafana:latest
 - quay.io/influxdb/influxdb:2.0.4
-- nginx:lastest
+- nginx:alpine
 
 
 #### This project was first based on these blog posts:

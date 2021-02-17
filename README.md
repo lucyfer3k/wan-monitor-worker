@@ -15,6 +15,8 @@ Dockerized WAN monitoring service isolated from private network (except nginx se
 
 ### Quick start:
 ```
+git clone https://github.com/lucyfer3k/wan-monitor-worker.git
+cd wan-monitor-worker
 bash setup-env.sh
 sudo docker-compose up -d
 sleep 30

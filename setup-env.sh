@@ -31,6 +31,10 @@ if [ -e ./config.ini ]; then
   echo "DNS_NAME_3=$pm_dns_name_3" | tee -a ./.env
   echo "DNS_IP_3=$pm_dns_ip_3" | tee -a ./.env
 
+  # Make Grafana setup runnable
+
+  chmod +x ./setup-grafana.sh
+
 else
   echo "Config file does not exist"
 fi

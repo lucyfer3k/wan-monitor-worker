@@ -5,7 +5,7 @@ Dockerized WAN monitoring service isolated from private network (except nginx se
 
 ### How to get started:
 1. Configure your environment within `config.ini`
-2. Setup environmental variables `./setup-env.sh`
+2. Setup environmental variables `bash setup-env.sh`
 3. Start your containers `sudo docker-compose up -d`
 4. After Grafana is up run `./setup-grafana.sh`
 5. Go to http://localhost:8080 and login to Grafana using your username & password (default admin:password123)
@@ -15,7 +15,7 @@ Dockerized WAN monitoring service isolated from private network (except nginx se
 
 ### Quick start:
 ```
-./setup-env.sh
+bash setup-env.sh
 sudo docker-compose up -d
 sleep 30
 ./setup-grafana.sh

@@ -1,7 +1,7 @@
 # wan-monitor-worker
 Dockerized WAN monitoring service maximally isolated from private network.
 
-![Alternative build with worker processes on directly on host machine](https://github.com/lucyfer3k/wan-monitor-host)
+![Alternative build with worker processes directly on host machine](https://github.com/lucyfer3k/wan-monitor-host)
 
 ### Solution architecture diagram
 

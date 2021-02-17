@@ -4,7 +4,7 @@ Dockerized WAN monitoring service isolated from private network (except nginx se
 ![](https://i.imgur.com/zJNA6Xm.png)
 
 ### How to get started:
-1. Configurate your environment within `config.ini`
+1. Configure your environment within `config.ini`
 2. Setup environmental variables `./setup-env.sh`
 3. Start your containers `sudo docker-compose up -d`
 4. After Grafana is up run `./setup-grafana.sh`

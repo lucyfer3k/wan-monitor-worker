@@ -10,19 +10,19 @@ do
   # Cloudflare
   curl -s --request POST "http://influxdb:8086/api/v2/write?org=$INFLUXDB_ORG&bucket=$INFLUXDB_BUCKET" \
       --header "Authorization: Token $INFLUXDB_TOKEN" \
-      --data-binary "ping,dest=cloudflare $(ping -c 1 1.1.1.1 | \
+      --data-binary "ping,dest=$DNS_NAME_1 $(ping -c 1 $DNS_IP_1 | \
       awk '/time=/{print $7}' | sed -e 's/time/rtt/g') $(date +%s%N)"
 
   # Google
   curl -s --request POST "http://influxdb:8086/api/v2/write?org=$INFLUXDB_ORG&bucket=$INFLUXDB_BUCKET" \
       --header "Authorization: Token $INFLUXDB_TOKEN" \
-      --data-binary "ping,dest=google $(ping -c 1 8.8.4.4 | \
+      --data-binary "ping,dest=$DNS_NAME_2 $(ping -c 1 $DNS_IP_2 | \
       awk '/time=/{print $7}' | sed -e 's/time/rtt/g') $(date +%s%N)"
 
   # Chello-Warsaw
   curl -s --request POST "http://influxdb:8086/api/v2/write?org=$INFLUXDB_ORG&bucket=$INFLUXDB_BUCKET" \
       --header "Authorization: Token $INFLUXDB_TOKEN" \
-      --data-binary "ping,dest=chello-warsaw $(ping -c 1 83.144.93.10 | \
+      --data-binary "ping,dest=$DNS_NAME_3 $(ping -c 1 $DNS_IP_3 | \
       awk '/time=/{print $7}' | sed -e 's/time/rtt/g') $(date +%s%N)"
   
   # Sleep til next full minute

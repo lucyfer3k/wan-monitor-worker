@@ -22,6 +22,15 @@ if [ -e ./config.ini ]; then
   echo "GF_SECURITY_ADMIN_USER=$gr_username" | tee -a ./.env
   echo "GF_SECURITY_ADMIN_PASSWORD=$gr_password" | tee -a ./.env
 
+  # Pingmon
+
+  echo "DNS_NAME_1=$pm_dns_name_1" | tee -a ./.env
+  echo "DNS_IP_1=$pm_dns_ip_1" | tee -a ./.env
+  echo "DNS_NAME_2=$pm_dns_name_2" | tee -a ./.env
+  echo "DNS_IP_2=$pm_dns_ip_2" | tee -a ./.env
+  echo "DNS_NAME_3=$pm_dns_name_3" | tee -a ./.env
+  echo "DNS_IP_3=$pm_dns_ip_3" | tee -a ./.env
+
 else
   echo "Config file does not exist"
 fi

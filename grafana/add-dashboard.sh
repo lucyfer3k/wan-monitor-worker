@@ -311,9 +311,9 @@ generate_post_data()
     },
     {
       "aliasColors": {
-        "ping {dest: chello-warsaw}": "dark-red",
-        "ping {dest: cloudflare}": "yellow",
-        "ping {dest: google}": "dark-blue"
+        "ping {dest: $DNS_NAME_3}": "dark-red",
+        "ping {dest: $DNS_NAME_1}": "yellow",
+        "ping {dest: $DNS_NAME_2}": "dark-blue"
       },
       "bars": false,
       "dashLength": 10,
@@ -327,36 +327,36 @@ generate_post_data()
           {
             "matcher": {
               "id": "byName",
-              "options": "rtt chello-warsaw"
+              "options": "rtt $DNS_NAME_3"
             },
             "properties": [
               {
                 "id": "displayName",
-                "value": "ping {dest: chello-warsaw}"
+                "value": "ping {dest: $DNS_NAME_3}"
               }
             ]
           },
           {
             "matcher": {
               "id": "byName",
-              "options": "rtt cloudflare"
+              "options": "rtt $DNS_NAME_1"
             },
             "properties": [
               {
                 "id": "displayName",
-                "value": "ping {dest: cloudflare}"
+                "value": "ping {dest: $DNS_NAME_1}"
               }
             ]
           },
           {
             "matcher": {
               "id": "byName",
-              "options": "rtt google"
+              "options": "rtt $DNS_NAME_2"
             },
             "properties": [
               {
                 "id": "displayName",
-                "value": "ping {dest: google}"
+                "value": "ping {dest: $DNS_NAME_2}"
               }
             ]
           }

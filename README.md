@@ -34,7 +34,7 @@ sleep 30
 #### Based on images:
 - ubuntu:latest
 - grafana/grafana:latest
-- quay.io/influxdb/influxdb:2.0.3
+- quay.io/influxdb/influxdb:2.0.4
 - nginx:lastest
 
 

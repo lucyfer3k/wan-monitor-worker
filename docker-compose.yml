@@ -10,11 +10,10 @@ services:
     restart: unless-stopped
 
   nginx:
-    image: nginx:latest
+    build:
+      context: ./nginx
     ports:
       - 8080:80
-    volumes:
-     - ./nginx:/etc/nginx/templates
     restart: unless-stopped
 
   influxdb:

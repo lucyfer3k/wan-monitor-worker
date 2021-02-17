@@ -1,5 +1,5 @@
-# wan-monitor
-Dockerized WAN monitoring service isolated from private network (except Grafana).
+# wan-monitor-worker
+Dockerized WAN monitoring service isolated from private network (except nginx serving as reverse proxy for Grafana).
 
 ![](https://i.imgur.com/zJNA6Xm.png)
 
@@ -30,6 +30,7 @@ sleep 30
 - Docker version 20.10.3
 - docker-compose version 1.28.2
 - Manjaro Nibia 20.2.1
+- curl 7.75.0
 
 #### Based on images:
 - ubuntu:latest

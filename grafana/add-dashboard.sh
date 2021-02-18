@@ -83,7 +83,7 @@ generate_post_data()
       "percentage": false,
       "pluginVersion": "7.3.7",
       "pointradius": 2,
-      "points": false,
+      "points": true,
       "renderer": "flot",
       "seriesOverrides": [],
       "spaceLength": 10,
@@ -457,7 +457,7 @@ generate_post_data()
           "format": "ms",
           "label": null,
           "logBase": 1,
-          "max": null,
+          "max": "150",
           "min": null,
           "show": true
         },
@@ -488,7 +488,7 @@ generate_post_data()
     "to": "now"
   },
   "timepicker": {},
-  "timezone": "utc",
+  "timezone": "browser",
   "title": "WAN Monitoring",
   "version": 0
 }

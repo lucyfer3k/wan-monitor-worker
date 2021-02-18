@@ -30,7 +30,7 @@ sleep 30
 
 #### Example of gathered data:
 
-![](https://i.imgur.com/fUrOOhe.png)
+![](https://i.imgur.com/5H9AsuH.png)
 
 #### Tested on:
 - Docker version 20.10.3

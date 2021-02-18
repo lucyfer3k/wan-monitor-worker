@@ -21,7 +21,7 @@ do
 
   # Sleep til next full hour
   time_left_m=`expr 60 - $(date +%M)`
-  time_left_s=`expr 60 - $(date +%S)`
+  time_left_s=`expr 70 - $(date +%S)`
   sleep $time_left_m\m $time_left_s
 
 done
